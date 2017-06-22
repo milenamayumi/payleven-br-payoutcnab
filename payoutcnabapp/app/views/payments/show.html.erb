@@ -1,0 +1,40 @@
+<div id="main-container" class="container">
+
+  <div class="row">
+
+
+    <div class="well well-lg">
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <h1>Payments</h1>
+
+          <% if !@result.payments.empty? %>
+              <div class="panel panel-default">
+                <!-- Transactions table -->
+                <table class="table">
+                  <tr>
+                    <th></th>
+
+                  </tr>
+                  <% @result.payments.each do |payment| %>
+                      <tr>
+                        <td><%= %></td>
+                      </tr>
+                  <% end %>
+                </table>
+              </div>
+              <!-- end Transactions table -->
+          <% else %>
+              No items
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
