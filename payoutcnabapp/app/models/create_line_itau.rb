@@ -1,12 +1,13 @@
 class CreateLineItau
 
-  def self.read_file_itau(filename, idarq)
+  def self.read_file_itau(filename, idarq, brand)
     io = File.open(filename, 'r') #open the itau cnab file
     io.each_line do |line|
       #this block registers in the database each line of the itau cnab file
       @returnvalue = nil
       retorno = Retorno.new
       retorno.idarquivo = idarq
+      retorno.brand = brand
 
       if line[0..2] == "341"
         retorno.alert = "ok"

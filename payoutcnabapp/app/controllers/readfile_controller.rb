@@ -11,11 +11,12 @@ class ReadfileController < ApplicationController
     idarq_db = 2
     idarq_itau = 3
     idarq_bradesco = 4
+    brand = "sumup"
 
-    CreateLineSantander::CreateLineSantander.read_file_santander(file_santander, idarq_santander)
-    CreateLineDB::CreateLineDB.read_file_db(file_db, idarq_db)
-    CreateLineItau::CreateLineItau.read_file_itau(file_itau, idarq_itau)
-    CreateLineBradesco::CreateLineBradesco.read_file_bradesco(file_bradesco, idarq_bradesco)
+    CreateLineSantander::CreateLineSantander.read_file_santander(file_santander, idarq_santander, brand)
+    CreateLineDB::CreateLineDB.read_file_db(file_db, idarq_db, brand)
+    CreateLineItau::CreateLineItau.read_file_itau(file_itau, idarq_itau, brand)
+    CreateLineBradesco::CreateLineBradesco.read_file_bradesco(file_bradesco, idarq_bradesco, brand)
 
   end
 

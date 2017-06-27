@@ -1,6 +1,6 @@
 class CreateLineDB
 
-  def self.read_file_db(filename, idarq)
+  def self.read_file_db(filename, idarq, brand)
 
     io = File.open(filename, 'r')
 
@@ -11,6 +11,7 @@ class CreateLineDB
 
       retorno = Retorno.new
       retorno.idarquivo = idarq
+      retorno.brand = brand
       retorno.bank = line[20..22] if (line[13] == 'A')
       retorno.type = line[217..218] if (line[13] == 'A')
       retorno.branch = line[24..27] if (line[13] == 'A')

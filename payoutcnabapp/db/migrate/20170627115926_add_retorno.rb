@@ -1,5 +1,4 @@
-class AddRetornos < ActiveRecord::Migration[5.1]
-
+class AddRetorno < ActiveRecord::Migration[5.1]
   def change
 
     create_table :retornos do |t|
@@ -31,11 +30,11 @@ class AddRetornos < ActiveRecord::Migration[5.1]
       t.string "doctype"      , null: true
       t.string "document"     , null: true
       t.string "paydate"      , null: true
+      t.string "brand"
 
       t.timestamps
 
     end
 
   end
-
 end

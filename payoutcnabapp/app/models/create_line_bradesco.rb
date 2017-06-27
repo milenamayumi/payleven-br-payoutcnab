@@ -1,6 +1,6 @@
 class CreateLineBradesco
 
-  def self.read_file_bradesco(filename, idarq)
+  def self.read_file_bradesco(filename, idarq, brand)
 
     io = File.open(filename, 'r') #open the bradesco cnab file
     io.each_line do |line|
@@ -8,6 +8,7 @@ class CreateLineBradesco
       @returnvalue = nil
       retorno = Retorno.new
       retorno.idarquivo = idarq
+      retorno.brand = brand
 
       if line[0] == '0' or line[0] == '1' or line[0] == '9'
         retorno.alert = "ok"
