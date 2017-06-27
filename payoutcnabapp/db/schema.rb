@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622181704) do
+ActiveRecord::Schema.define(version: 20170626143707) do
 
   create_table "retornos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "idarquivo"
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20170622181704) do
     t.string "result"
     t.string "query"
     t.string "soap"
+    t.string "alert"
+    t.string "register"
+    t.string "doctype"
+    t.string "document"
+    t.string "paydate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -20,11 +20,17 @@ class CreateRetorno < ActiveRecord::Migration[5.1]
         t.string "idtype"       , null: true
         t.string "idnumber"     , null: true
         t.string "auth"         , null: true
-        t.string "bankid"         , null: true
+        t.string "bankid"       , null: true
         t.string "return"       , null: true
         t.string "result"       , null: true
-        t.string "query"       , null: true
-        t.string "soap"       , null: true
+        t.string "query"        , null: true
+        t.string "soap"         , null: true
+
+        t.string "alert"        , null: true
+        t.string "register"     , null: true
+        t.string "doctype"      , null: true
+        t.string "document"     , null: true
+        t.string "paydate"      , null: true
 
         t.timestamps
 

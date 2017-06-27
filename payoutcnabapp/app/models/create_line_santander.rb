@@ -20,7 +20,8 @@ class CreateLineSantander
       retorno.agencia, @agenciavalue = line[36..39] if (line[6] == '0')
       retorno.filedate = line[143..150] if (line[6] == '0')
       retorno.date = line[93..100] if (line[13] == 'A')
-      retorno.amount = line[104..133] if (line[13] == 'A')
+      retorno.amount = line[104..133].to_f / 100 if (line[13] == 'A')
+
       retorno.typecompany = line[17..19] if (line[13] == 'A')
       #@retorno.idtype if (line[13] == 'A')
       retorno.idnumber = line[18..31] if (line[13] == 'A')
