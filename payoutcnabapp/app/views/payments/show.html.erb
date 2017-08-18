@@ -1,40 +1,60 @@
-<div id="main-container" class="container">
 
-  <div class="row">
+<div class="panel panel-default" style="padding: 30px; width: auto; overflow: scroll;">
+  <div class="panel-body">
+    <br>
+    <h1>Payouts</h1>
 
-
-    <div class="well well-lg">
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-
-          <h1>Payments</h1>
-
-          <% if !@result.payments.empty? %>
-              <div class="panel panel-default">
-                <!-- Transactions table -->
-                <table class="table">
-                  <tr>
-                    <th></th>
-
-                  </tr>
-                  <% @result.payments.each do |payment| %>
-                      <tr>
-                        <td><%= %></td>
-                      </tr>
-                  <% end %>
-                </table>
-              </div>
-              <!-- end Transactions table -->
-          <% else %>
-              No items
-          <% end %>
-
+    <% if !@result.payments.empty? %>
+        <div class="panel panel-default" style="overflow: scroll;">
+          <!-- Transactions table -->
+          <table class="table table-striped">
+            <thead class="thead-inverse">
+            <tr>
+              <th>Result</th>
+              <th>ID Arquivo</th>
+              <th>Brand</th>
+              <th>Bank</th>
+              <th>Type</th>
+              <th>Account</th>
+              <th>Deposit Short</th>
+              <th>Name</th>
+              <th>Agencia</th>
+              <th>File Date</th>
+              <th>Amount</th>
+              <th>Type Company</th>
+              <th>ID Type</th>
+              <th>Return</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @result.payments.each do |r| %>
+                <tr>
+                  <td><%= r.result %></td>
+                  <td><%= r.idarquivo %></td>
+                  <td><%= r.brand %></td>
+                  <td><%= r.bank %></td>
+                  <td><%= r.tipo %></td>
+                  <td><%= r.account %></td>
+                  <td><%= r.depositshort %></td>
+                  <td><%= r.name %></td>
+                  <td><%= r.agencia %></td>
+                  <td><%= r.filedate %></td>
+                  <td><%= r.amount %></td>
+                  <td><%= r.typecompany %></td>
+                  <td><%= r.idtype %></td>
+                  <td><%= r.return %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
         </div>
-
-      </div>
-    </div>
+        <!-- end Transactions table -->
+    <% else %>
+        No items
+    <% end %>
 
   </div>
 
 </div>
+
+

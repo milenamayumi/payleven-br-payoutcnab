@@ -3,7 +3,8 @@ class PaymentsController < ApplicationController
   end
 
   def show
-    #@payments = SearchResult.new.get_result(params)
+    params[:arqid] = '1'
+    @result = Payment.new.get_result(params)
   end
 
   def create

@@ -1,0 +1,30 @@
+<div class="panel panel-default" style="padding: 50px;">
+
+  <div class="well" style="margin-top: 60px">
+
+    <% if !@arquivo.errors.empty? %>
+        <div class="alert alert-error">
+          <ul>
+            <% @arquivo.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= form_for @arquivo, html: {multipart: true} do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br><br>
+        <%= f.label :bank %>
+        <%= f.text_field :bank %>
+        <br><br>
+        <%= f.label :attachment %>
+        <%= f.file_field :attachment %>
+        <br><br>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+
+</div>

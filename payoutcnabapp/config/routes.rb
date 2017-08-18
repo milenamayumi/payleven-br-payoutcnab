@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  resources :arquivos, only: [:index, :new, :create, :destroy]
+
+  get 'arquivos/index'
+
+  get 'arquivos/new'
+
+  get 'arquivos/create'
+
+  get 'arquivos/destroy'
+
   get 'payments/index'
 
   get 'payments/show'
@@ -9,17 +20,7 @@ Rails.application.routes.draw do
 
   get 'payments/destroy'
 
-  get 'readfile/index'
-
-  get 'readfile/show'
-
-  get 'readfile/create'
-
-  get 'readfile/update'
-
-  get 'readfile/destroy'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'readfile#index'
+  root 'payments#show'
 end

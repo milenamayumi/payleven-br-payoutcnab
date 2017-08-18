@@ -11,21 +11,23 @@
   </script>
   <![endif]-->
 </head>
-<body>
+<div>
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", '#', id: "logo" %>
+    <!--<img src="/sumup-logo.jpg" alt="rss feed" height="50" width="60"/>-->
     <nav>
+      <br>
+      <b>SumUp - Payouts</b>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Import",   '#' %></li>
-        <li><%= link_to "List",   '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
+        <li><%= link_to "Import",   '/arquivos/index' %></li>
+        <li><%= link_to "View",   '/payments/show' %></li>
       </ul>
     </nav>
   </div>
 </header>
-<div class="container">
+
+  <body>
   <%= yield %>
-</div>
-</body>
+  </body>
+
 </html>
