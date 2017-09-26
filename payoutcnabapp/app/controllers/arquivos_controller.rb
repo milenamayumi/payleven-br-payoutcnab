@@ -12,7 +12,7 @@ class ArquivosController < ApplicationController
 
     if @arquivo.save
       arq = @arquivo.attachment.read
-      brand = 'sumup'
+      brand = @arquivo.brand
       bank = @arquivo.bank
       success = ReadArquivo::ReadArquivo.read_file(arq, @arquivo.name, brand, bank)
       if success
@@ -22,18 +22,20 @@ class ArquivosController < ApplicationController
       end
     else
       render "new"
-    end
-  end
 
   def destroy
     @arquivo = Arquivo.find(params[:id])
+    p @arquivo.name
+    @payments = Payment.find_by(idarquivo: @arquivo.name)
+    p @payments.inspect
+    @payments.destroy
     @arquivo.destroy
     redirect_to Arquivos_path, notice:  "The Arquivo #{@arquivo.name} has been deleted."
   end
 
   private
   def arquivo_params
-    params.require(:arquivo).permit(:name, :attachment, :bank)
+    params.require(:arquivo).permit(:name, :attachment, :brand, :bank)
   end
 
 end
